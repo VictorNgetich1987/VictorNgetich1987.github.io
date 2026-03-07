@@ -1,1 +1,248 @@
 
+* { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f8f8f6;
+    color: #222;
+    line-height: 1.75;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #1a1a2e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 48px;
+    height: 54px;
+  }
+  .nav-logo {
+    color: #aab4d4;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  .nav-links a {
+    color: #aab4d4;
+    text-decoration: none;
+    margin-left: 32px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: #ffffff; }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+    color: white;
+    padding: 100px 48px 90px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; right: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+    pointer-events: none;
+  }
+  .header-tag {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #7eb8f7;
+    margin-bottom: 20px;
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  header h1 span { color: #7eb8f7; }
+  header p {
+    font-size: 16px;
+    color: #aab4d4;
+    max-width: 480px;
+  }
+
+  /* Badges */
+  .header-badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+  }
+  .badge {
+    font-size: 12px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(126,184,247,0.3);
+    color: #7eb8f7;
+    background: rgba(126,184,247,0.08);
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    max-width: 960px;
+    margin: 70px auto;
+    padding: 0 32px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #7eb8f7;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #1a1a2e;
+    margin-bottom: 28px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #e8e8e4;
+  }
+
+  /* ── ABOUT ── */
+  #about p {
+    font-size: 15px;
+    color: #555;
+    max-width: 680px;
+  }
+
+  /* ── CARDS ── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .card {
+    background: #ffffff;
+    border: 1px solid #e8e8e4;
+    border-radius: 8px;
+    padding: 28px 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #1a1a2e, #0f3460);
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+  .card-icon {
+    font-size: 28px;
+    margin-bottom: 14px;
+    display: block;
+  }
+  .card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+  }
+  .card p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.75;
+  }
+
+  /* ── OUTCOMES ── */
+  #outcomes { background: #ffffff; border-radius: 12px; padding: 40px; box-shadow: 0 2px 16px rgba(0,0,0,0.05); max-width: 960px; margin: 70px auto; }
+  #outcomes h2 { border-bottom-color: #e8e8e4; }
+  .outcomes-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .outcome-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 18px;
+    background: #f8f8f6;
+    border-radius: 6px;
+    border: 1px solid #e8e8e4;
+  }
+  .outcome-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #1a1a2e;
+    opacity: 0.25;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .outcome-text {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+  }
+  .outcome-item:last-child { grid-column: span 2; }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .skill-item {
+    background: #ffffff;
+    border: 1px solid #e8e8e4;
+    border-radius: 6px;
+    padding: 14px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a1a2e;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .skill-item:hover {
+    border-color: #1a1a2e;
+    background: #f0f2f8;
+  }
+  .skill-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #1a1a2e;
+    flex-shrink: 0;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #1a1a2e;
+    color: #aab4d4;
+    text-align: center;
+    padding: 32px 24px;
+    font-size: 13px;
+    margin-top: 80px;
+  }
+  footer span { color: #7eb8f7; }
+
+  /* ── FADE IN ── */
+  .fade {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade.show { opacity: 1; transform: translateY(0); }
